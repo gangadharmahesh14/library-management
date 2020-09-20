@@ -1,0 +1,23 @@
+/* table heading */
+#table-heading {
+  padding: 10px 0;
+  input {
+    float: right;
+  }
+}
+
+/* book details table */
+table {
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}

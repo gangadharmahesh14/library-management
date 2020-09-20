@@ -1,0 +1,53 @@
+/* top section */
+.top-section {
+  display: flex;
+}
+
+/* Member details */
+.member-details-section {
+  margin-top: 20px;
+  width: 60%;
+  input {
+    width: 60%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    display: block;
+    border: none;
+    background: #f1f1f1;
+  }
+}
+
+/* btns style */
+.bottom-section {
+  // bottom: 0;
+  // position: fixed;
+  // right: 20px;
+  float: right;
+  padding: 10px 0;
+  .btn {
+    border: none;
+    color: white;
+    padding: 10px 28px;
+    margin-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .success {
+    background-color: #4CAF50;
+  }
+  .default {
+    background-color: #e7e7e7;
+    color: black;
+  }
+}
+
+.btn-disabled {
+  cursor: not-allowed !important;
+  background-color: #4caf507d;
+}
+
+.error-message {
+  text-align: center;
+  color: #a94442;
+  font-size: 18px;
+}

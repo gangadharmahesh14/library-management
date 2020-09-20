@@ -1,0 +1,15 @@
+<div id="app-container">
+	<!-- Top nav bar -->
+	<div class="navbar"> <a>{{title}}</a> </div>
+	<!-- sidebar menu -->
+	<div class="sidebar">
+		<a routerLink="index.html" routerLinkActive="active">Dashboard</a>
+		<a routerLink="/get-book" routerLinkActive="active">Get Book</a>
+		<a routerLink="/return-book" routerLinkActive="active">Return Book</a>
+		<a routerLink="/history" routerLinkActive="active">History</a>
+	</div>
+	<!-- page content -->
+	<div class="content">
+		<router-outlet></router-outlet>
+	</div>
+</div>

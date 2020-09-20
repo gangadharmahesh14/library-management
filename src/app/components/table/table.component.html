@@ -1,0 +1,16 @@
+<div>
+  <div id="table-heading">
+    <label><b>{{inputTableData.tableHeading || 'Books Detail'}}</b></label>
+    <input id="table-filter" type="text" placeholder="Search" [(ngModel)]="filterText" >
+  </div>
+  <table>
+    <tr>
+      <th *ngIf="inputTableData.allowSelection">Select</th>
+      <th *ngFor="let column of inputTableData.columns">{{column.displayName}}</th>
+    </tr>
+    <tr *ngFor="let row of inputTableData.tableData | tableFilter: filterText">
+      <td *ngIf="inputTableData.allowSelection"><input type="checkbox" (change)="addBook(row)" [checked]="row.isSelected"></td>
+      <td *ngFor="let column of inputTableData.columns">{{row[column.field]}}</td>
+    </tr>
+  </table>
+</div>

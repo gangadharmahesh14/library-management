@@ -1,0 +1,8 @@
+<div class="card">
+  <h3>{{cardDetails.title}}</h3>
+  <p class="book-count">{{cardDetails.count}}</p>
+  <label class="show-details" [hidden]="cardDetails.hideSelection">
+    <input type="radio" [checked]="(selectedCard === cardDetails.type)" (change)="selectCard(cardDetails)" name="radio">
+    <span class="card-details-link">Show Details</span>
+  </label>
+</div>

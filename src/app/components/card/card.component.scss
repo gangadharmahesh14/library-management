@@ -1,0 +1,34 @@
+.card {
+  background-color: #f1f1f1;
+  width: 250px;
+  margin: 12px;
+
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  // margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-family: arial;
+}
+
+.inactive-card {
+  background-color: #f1f1f1;
+}
+.active-card {
+  background-color: #3c833f52;
+}
+
+.card h3 {
+  color: #555;
+}
+
+.book-count {
+  color: grey;
+  font-size: 18px;
+  padding-top: 0px;
+  border-radius: 50%;
+}
+
+.card-details-link {
+  color: #609;
+}

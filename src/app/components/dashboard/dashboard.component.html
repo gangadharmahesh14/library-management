@@ -1,0 +1,14 @@
+<!-- Dashboard card section -->
+<div id="card-section">
+  <div class="flex-container">
+    <app-card [cardDetails]="totalBookDetails" (cardSelectEvent)="cardSelection($event)"></app-card>
+    <app-card [cardDetails]="availableBookDetails" (cardSelectEvent)="cardSelection($event)"></app-card>
+    <app-card [cardDetails]="rentedBookDetails" (cardSelectEvent)="cardSelection($event)"></app-card>
+    <app-card [cardDetails]="membersDetails" (cardSelectEvent)="cardSelection($event)"></app-card>
+  </div>
+</div>
+
+<!-- Table section -->
+<div class="table-section">
+  <app-table [inputTableData]="inputTableData"></app-table>
+</div>

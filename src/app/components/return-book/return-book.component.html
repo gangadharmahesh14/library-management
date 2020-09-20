@@ -1,0 +1,30 @@
+<div>
+  <!-- menbers details inputs -->
+  <div class="top-section">
+    <div class="member-details-section">
+      <div>
+        <label for="memberid"><b>Membership No *</b></label>
+        <input type="number" placeholder="Enter Member ID" [(ngModel)]="memberDetails.memberId" (blur)="updateRentalTable(memberDetails.memberId)" required>
+      </div>
+      <div>
+        <label for="name"><b>User Name *</b></label>
+        <input type="text" placeholder="Enter Member Name" [(ngModel)]="memberDetails.memberName" [disabled]="true" required>
+      </div>
+    </div>
+    <div class="card-section">
+      <app-card [cardDetails]="rentedBookDetails"></app-card>
+    </div>
+  </div>
+  <!-- table section : selected members rented books list -->
+  <div *ngIf="returnBooksTableData">
+    <app-table [inputTableData]="returnBooksTableData"></app-table>
+  </div>
+  <div class="error-message" *ngIf="!returnBooksTableData">
+    Membership Id not entered or no rented books available to this member.
+  </div>
+  <!-- footer btn section -->
+  <div class="bottom-section">
+    <button class="btn default">Cancel</button>
+    <button class="btn" [ngClass]="(!memberDetails.memberId) ? 'btn-disabled' : 'success'">Lend Books</button>
+  </div>
+</div>

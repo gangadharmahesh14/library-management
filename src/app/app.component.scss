@@ -1,0 +1,79 @@
+body {
+  margin: 0 !important;
+  font-family: "Lato", sans-serif;
+}
+
+#app-container {
+  margin: -8px;
+}
+
+/* top nav bar */
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+  padding: 10px 0;
+  text-align: center;
+  margin-top: -8px;
+  position: fixed;
+  top: 0px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    display: block;
+  }
+}
+
+/* let sidebar */
+.sidebar {
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  margin-top: 8px;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 12px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  margin-top: 33px;
+  padding: 5px 15px 15px 15px;
+  height: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
