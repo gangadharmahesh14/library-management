@@ -19,6 +19,7 @@ export class ReturnBookComponent implements OnInit {
     duration: '',
     returnDate: ''
   };
+  selectedRows: any;
 
   constructor() { }
 
@@ -38,6 +39,16 @@ export class ReturnBookComponent implements OnInit {
     this.returnBooksTableData.allowSelection = true;
     // auto-fill member name
     this.memberDetails.memberName = (memberDetails && memberDetails.memberName) || '';
+  }
+
+  // table row selection handler
+  rowSelection($event) {
+    this.selectedRows = $event;
+  }
+
+  returnBooks() {
+    this.rentedBookDetails.count = this.rentedBookDetails.count - this.selectedRows.length;
+    this.returnBooksTableData.tableData = this.returnBooksTableData.tableData.filter((book) => this.selectedRows.indexOf(book.id) === -1);
   }
 
 }

@@ -19,6 +19,7 @@ export class GetBookComponent implements OnInit {
     duration: '',
     returnDate: ''
   };
+  selectedRows: any;
 
   constructor() { }
 
@@ -45,6 +46,23 @@ export class GetBookComponent implements OnInit {
     const date = today.getDate();
     today.setDate(date + duration);
     return today.toDateString();
+  }
+
+  // table row selection handler
+  rowSelection($event) {
+    this.selectedRows = $event;
+  }
+
+  lendBooks() {
+    this.availableBookDetails.count = this.availableBookDetails.count - this.selectedRows.length;
+    this.getBooksTableData.tableData = this.getBooksTableData.tableData.map((book) => {
+      if (this.selectedRows.indexOf(book.id) !== -1) {
+        book.copies = book.copies - 1;
+        return book;
+      } else {
+        return book;
+      }
+    });
   }
 
 }

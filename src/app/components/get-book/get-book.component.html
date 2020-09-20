@@ -23,10 +23,10 @@
     </div>
   </div>
   <div class="table-section">
-    <app-table [inputTableData]="getBooksTableData"></app-table>
+    <app-table [inputTableData]="getBooksTableData" (rowselectEvent)="rowSelection($event)"></app-table>
   </div>
   <div class="bottom-section">
     <button class="btn default">Cancel</button>
-    <button class="btn" [ngClass]="(!memberDetails.memberId || !memberDetails.memberName || !memberDetails.duration) ? 'btn-disabled' : 'success'">Lend Books</button>
+    <button class="btn" [ngClass]="(!memberDetails.memberId || !memberDetails.memberName || !memberDetails.duration || (!selectedRows || !selectedRows.length)) ? 'btn-disabled' : 'success'" (click)="lendBooks()">Lend Books</button>
   </div>
 </div>

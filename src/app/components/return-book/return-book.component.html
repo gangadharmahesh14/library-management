@@ -17,7 +17,7 @@
   </div>
   <!-- table section : selected members rented books list -->
   <div *ngIf="returnBooksTableData">
-    <app-table [inputTableData]="returnBooksTableData"></app-table>
+    <app-table [inputTableData]="returnBooksTableData" (rowselectEvent)="rowSelection($event)"></app-table>
   </div>
   <div class="error-message" *ngIf="!returnBooksTableData">
     Membership Id not entered or no rented books available to this member.
@@ -25,6 +25,6 @@
   <!-- footer btn section -->
   <div class="bottom-section">
     <button class="btn default">Cancel</button>
-    <button class="btn" [ngClass]="(!memberDetails.memberId) ? 'btn-disabled' : 'success'">Return Books</button>
+    <button class="btn" [ngClass]="(!memberDetails.memberId || (!selectedRows || !selectedRows.length)) ? 'btn-disabled' : 'success'" (click)="returnBooks()">Return Books</button>
   </div>
 </div>
