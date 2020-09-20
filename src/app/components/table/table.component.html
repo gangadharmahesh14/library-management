@@ -8,8 +8,8 @@
       <th *ngIf="inputTableData.allowSelection">Select</th>
       <th *ngFor="let column of inputTableData.columns">{{column.displayName}}</th>
     </tr>
-    <tr *ngFor="let row of inputTableData.tableData | tableFilter: filterText">
-      <td *ngIf="inputTableData.allowSelection"><input type="checkbox" (change)="addBook(row)" [checked]="row.isSelected"></td>
+    <tr *ngFor="let row of inputTableData.tableData | tableFilter: filterText ; let i = index">
+      <td *ngIf="inputTableData.allowSelection"><input type="checkbox" (change)="addBook($event, row, i)" [checked]="row.isSelected"></td>
       <td *ngFor="let column of inputTableData.columns">{{row[column.field]}}</td>
     </tr>
   </table>

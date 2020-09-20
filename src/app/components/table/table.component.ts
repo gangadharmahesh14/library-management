@@ -16,9 +16,16 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // select book
-  addBook(book) {
+  // check/uncheck books from table
+  addBook(event, book, index) {
     // this.selectedBooks.push(book);
     book.isSelected = !book.isSelected;
+    const isChecked = event.target.checked;
+    if (isChecked) {
+      this.selectedBooks.push(book);
+    } else {
+      const searchedIndex = this.selectedBooks.findIndex(x => x.id === book.id);
+      this.selectedBooks.splice(searchedIndex, 0, 1);
+    }
   }
 }

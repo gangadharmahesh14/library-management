@@ -1,6 +1,6 @@
 body {
   margin: 0 !important;
-  font-family: "Lato", sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 #app-container {
@@ -12,7 +12,7 @@ body {
   width: 100%;
   background-color: #555;
   overflow: auto;
-  padding: 10px 0;
+  padding: 15px 0;
   text-align: center;
   margin-top: -8px;
   position: fixed;
@@ -22,7 +22,7 @@ body {
 .navbar a {
   color: white;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 @media screen and (max-width: 500px) {
@@ -33,13 +33,14 @@ body {
 
 /* let sidebar */
 .sidebar {
+  font-family: cursive;
   padding: 0;
   width: 200px;
   background-color: #f1f1f1;
   position: fixed;
   height: 100%;
   overflow: auto;
-  margin-top: 8px;
+  margin-top: 23px;
 }
 
 .sidebar a {
@@ -57,7 +58,7 @@ body {
 div.content {
   margin-left: 200px;
   margin-top: 33px;
-  padding: 5px 15px 15px 15px;
+  padding: 25px 15px 15px 15px;
   height: auto;
 }
 
