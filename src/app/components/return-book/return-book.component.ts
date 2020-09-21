@@ -49,6 +49,7 @@ export class ReturnBookComponent implements OnInit {
   returnBooks() {
     this.rentedBookDetails.count = this.rentedBookDetails.count - this.selectedRows.length;
     this.returnBooksTableData.tableData = this.returnBooksTableData.tableData.filter((book) => this.selectedRows.indexOf(book.id) === -1);
+    this.selectedRows = [];
   }
 
 }

@@ -19,7 +19,7 @@
   <div *ngIf="returnBooksTableData">
     <app-table [inputTableData]="returnBooksTableData" (rowselectEvent)="rowSelection($event)"></app-table>
   </div>
-  <div class="error-message" *ngIf="!returnBooksTableData">
+  <div class="error-message" *ngIf="!returnBooksTableData || !returnBooksTableData.tableData.length">
     Membership Id not entered or no rented books available to this member.
   </div>
   <!-- footer btn section -->
